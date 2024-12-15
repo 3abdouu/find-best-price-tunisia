@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparateur de Prix</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Scraper Comparateur de Prix</h1>
+        <form method="POST">
+            <label for="product">Nom du produit :</label>
+            <input type="text" id="product" name="product" required>
+            <button type="submit">Rechercher</button>
+        </form>
+    </div>
+</body>
+</html>
