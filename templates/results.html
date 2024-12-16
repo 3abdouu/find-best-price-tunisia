@@ -4,16 +4,32 @@
     <meta charset="UTF-8">
     <title>Résultats</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
-
 </head>
 <body>
     <div class="container">
         <h1>Résultats des Prix</h1>
+
+
+        {% if lowest_price %}
+            <div class="lowest-price">
+                <h2>Meilleur Prix</h2>
+                <p>
+                    <strong>Produit :</strong> {{ lowest_price.product }}<br>
+                    <strong>Prix :</strong> {{ lowest_price.price }} DT<br>
+                    <strong>Site :</strong> {{ lowest_price.site }}
+                </p>
+            </div>
+        {% else %}
+            <p>Aucun produit trouvé.</p>
+        {% endif %}
+
+    
         <div class="table-container">
             {% for table in tables %}
                 {{ table|safe }}
             {% endfor %}
         </div>
+
         <a href="/">Retour</a>
     </div>
 </body>
